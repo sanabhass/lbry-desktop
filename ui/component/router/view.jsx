@@ -41,6 +41,7 @@ import CreatorDashboard from 'page/creatorDashboard';
 import RewardsVerifyPage from 'page/rewardsVerify';
 import CheckoutPage from 'page/checkoutPage';
 import BuyPage from 'page/buy';
+import NotificationsPage from 'page/notifications';
 
 import { parseURI } from 'lbry-redux';
 import { SITE_TITLE, WELCOME_VERSION } from 'config';
@@ -187,6 +188,12 @@ function AppRouter(props: Props) {
       <Route path={`/$/${PAGES.INVITE}/:referrer`} exact component={InvitedPage} />
       <Route path={`/$/${PAGES.CHECKOUT}`} exact component={CheckoutPage} />
 
+      <PrivateRoute
+        {...props}
+        path={`/$/${PAGES.SETTINGS_NOTIFICATIONS}`}
+        exact
+        component={SettingsNotificationsPage}
+      />
       <PrivateRoute {...props} path={`/$/${PAGES.INVITE}`} component={InvitePage} />
       <PrivateRoute {...props} path={`/$/${PAGES.PUBLISHED}`} component={FileListPublished} />
       <PrivateRoute {...props} path={`/$/${PAGES.CREATOR_DASHBOARD}`} component={CreatorDashboard} />
@@ -196,10 +203,11 @@ function AppRouter(props: Props) {
       <PrivateRoute {...props} path={`/$/${PAGES.REWARDS_VERIFY}`} component={RewardsVerifyPage} />
       <PrivateRoute {...props} path={`/$/${PAGES.LIBRARY}`} component={LibraryPage} />
       <PrivateRoute {...props} path={`/$/${PAGES.TAGS_FOLLOWING_MANAGE}`} component={TagsFollowingManagePage} />
-      <PrivateRoute {...props} path={`/$/${PAGES.BLOCKED}`} component={ListBlockedPage} />
+      <PrivateRoute {...props} path={`/$/${PAGES.SETTINGS_BLOCKED}`} component={ListBlockedPage} />
       <PrivateRoute {...props} path={`/$/${PAGES.WALLET}`} exact component={WalletPage} />
       <PrivateRoute {...props} path={`/$/${PAGES.CHANNELS}`} component={ChannelsPage} />
       <PrivateRoute {...props} path={`/$/${PAGES.BUY}`} component={BuyPage} />
+      <PrivateRoute {...props} path={`/$/${PAGES.NOTIFICATIONS}`} component={NotificationsPage} />
 
       <Route path={`/$/${PAGES.EMBED}/:claimName`} exact component={EmbedWrapperPage} />
       <Route path={`/$/${PAGES.EMBED}/:claimName/:claimId`} exact component={EmbedWrapperPage} />

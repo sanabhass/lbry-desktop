@@ -957,10 +957,10 @@
     prop-types "^15.6.2"
     scheduler "^0.18.0"
 
-"@lbry/components@^4.2.2":
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/@lbry/components/-/components-4.2.2.tgz#023b8224e180b69cd8b5d77242441742bca26d0f"
-  integrity sha512-CziwuALDiv/DXT5zwkVK8cfF914WyOqKg8GkqIk/f9vc7VXZx9OlRfBadnpGDrezrjjHn7onwOreQrwzB5PcNA==
+"@lbry/components@^4.2.3":
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/@lbry/components/-/components-4.2.3.tgz#e289fd323cf8b742baa2ec4de339cd8bcbed71d4"
+  integrity sha512-W8RvJKyT/yPy5VYHJ+bRqqyzlj/KIuscti78hUjgLPClwGYalK8hB2S4pf7bwK6JJvzFqAbbuzZmtdl3yaODEw==
 
 "@mapbox/hast-util-table-cell-style@^0.1.3":
   version "0.1.3"

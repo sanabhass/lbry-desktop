@@ -3,7 +3,8 @@ import * as ACTIONS from 'constants/action_types';
 import { handleActions } from 'util/redux-utils';
 
 const defaultState: NotificationState = {
-  notifications: [],
+  notifications: undefined,
+  fetchingNotifications: false,
   toasts: [],
   errors: [],
 };
@@ -32,38 +33,24 @@ export default handleActions(
     },
 
     // Notifications
-    [ACTIONS.CREATE_NOTIFICATION]: (state: NotificationState, action: DoNotification) => {
-      const notification: Notification = action.data;
-      const newNotifications: Array<Notification> = state.notifications.slice();
-      newNotifications.push(notification);
-
+    [ACTIONS.NOTIFICATION_LIST_STARTED]: (state, action) => {
       return {
         ...state,
-        notifications: newNotifications,
+        fetchingNotifications: true,
       };
     },
-    // Used to mark notifications as read/dismissed
-    [ACTIONS.EDIT_NOTIFICATION]: (state: NotificationState, action: DoEditNotification) => {
-      const { notification } = action.data;
-      let notifications: Array<Notification> = state.notifications.slice();
-
-      notifications = notifications.map(pastNotification =>
-        pastNotification.id === notification.id ? notification : pastNotification
-      );
-
+    [ACTIONS.NOTIFICATION_LIST_COMPLETED]: (state, action) => {
+      const { notifications } = action.data;
       return {
         ...state,
         notifications,
+        fetchingNotifications: false,
       };
     },
-    [ACTIONS.DELETE_NOTIFICATION]: (state: NotificationState, action: DoDeleteNotification) => {
-      const { id } = action.data;
-      let newNotifications: Array<Notification> = state.notifications.slice();
-      newNotifications = newNotifications.filter(notification => notification.id !== id);
-
+    [ACTIONS.NOTIFICATION_LIST_FAILED]: (state, action) => {
       return {
         ...state,
-        notifications: newNotifications,
+        fetchingNotifications: false,
       };
     },
 

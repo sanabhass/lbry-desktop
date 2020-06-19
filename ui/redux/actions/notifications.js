@@ -1,5 +1,6 @@
 // @flow
 import * as ACTIONS from 'constants/action_types';
+import { Lbryio } from 'lbryinc';
 import uuid from 'uuid/v4';
 
 export function doToast(params: ToastParams) {
@@ -34,5 +35,19 @@ export function doError(error: string | {}) {
 export function doDismissError() {
   return {
     type: ACTIONS.DISMISS_ERROR,
+  };
+}
+
+export function doNotificationList() {
+  return dispatch => {
+    dispatch({ type: ACTIONS.NOTIFICATION_LIST_STARTED });
+    return Lbryio.call('notification', 'list')
+      .then(response => {
+        const notifications = response || [];
+        dispatch({ type: ACTIONS.NOTIFICATION_LIST_COMPLETED, data: { notifications } });
+      })
+      .catch(error => {
+        dispatch({ type: ACTIONS.NOTIFICATION_LIST_FAILED, data: { error } });
+      });
   };
 }

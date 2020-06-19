@@ -12,6 +12,7 @@ import Icon from 'component/common/icon';
 import { Menu, MenuList, MenuButton, MenuItem } from '@reach/menu-button';
 import Tooltip from 'component/common/tooltip';
 import NavigationButton from 'component/navigationButton';
+import NotificationHeaderButton from 'component/notificationHeaderButton';
 import { LOGO_TITLE } from 'config';
 // @if TARGET='app'
 import { remote } from 'electron';
@@ -66,6 +67,7 @@ const Header = (props: Props) => {
     clearEmailEntry,
     clearPasswordEntry,
     emailToVerify,
+    hasNotifications = true,
   } = props;
 
   // on the verify page don't let anyone escape other than by closing the tab to keep session data consistent
@@ -202,6 +204,8 @@ const Header = (props: Props) => {
                     </MenuItem>
                   </MenuList>
                 </Menu>
+
+                <NotificationHeaderButton />
 
                 <Menu>
                   <MenuButton

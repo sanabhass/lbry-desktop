@@ -34,6 +34,7 @@ class RewardsPage extends PureComponent<Props> {
   componentDidMount() {
     this.props.fetchRewards();
   }
+
   renderPageHeader() {
     const { user, daemonSettings, fetchUser } = this.props;
     const rewardsEnabled = IS_WEB || (daemonSettings && daemonSettings.share_usage_data);

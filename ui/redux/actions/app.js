@@ -21,7 +21,7 @@ import {
   selectFollowedTagsList,
   // SHARED_PREFERENCES,
 } from 'lbry-redux';
-import { doToast, doError } from 'redux/actions/notifications';
+import { doToast, doError, doNotificationList } from 'redux/actions/notifications';
 import Native from 'native';
 import {
   doFetchDaemonSettings,
@@ -50,6 +50,7 @@ import { doAuthenticate } from 'redux/actions/user';
 import { lbrySettings as config, version as appVersion } from 'package.json';
 import analytics, { SHARE_INTERNAL } from 'analytics';
 import { doSignOutCleanup, deleteSavedPassword, getSavedPassword } from 'util/saved-passwords';
+import { doSocketConnect } from 'redux/actions/socket';
 
 // @if TARGET='app'
 const { autoUpdater } = remote.require('electron-updater');
@@ -504,6 +505,8 @@ export function doAnaltyicsPurchaseEvent(fileInfo) {
 
 export function doSignIn() {
   return (dispatch, getState) => {
+    dispatch(doSocketConnect());
+    dispatch(doNotificationList());
     // @if TARGET='web'
     dispatch(doBalanceSubscribe());
     dispatch(doFetchChannelListMine());
