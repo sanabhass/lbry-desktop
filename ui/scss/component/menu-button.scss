@@ -10,7 +10,6 @@
   position: absolute;
   z-index: 2;
   font-size: var(--font-body);
-  //   padding: var(--spacing-s);
 }
 
 [data-reach-menu-list] {
@@ -61,8 +60,9 @@
 .menu__link {
   display: flex;
   align-items: center;
-  padding: var(--spacing-m);
+  padding: var(--spacing-s);
   padding-right: var(--spacing-l);
+  height: var(--button-height);
 
   .icon {
     stroke: var(--color-menu-icon);
@@ -84,10 +84,7 @@
 .menu__link--notification {
   display: flex;
   align-items: flex-start;
-  padding: var(--spacing-m);
-
-  &:hover {
-  }
+  padding: var(--spacing-s);
 }
 
 .menu__link--all-notifications {

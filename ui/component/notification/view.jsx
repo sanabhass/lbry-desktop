@@ -4,11 +4,16 @@ import React from 'react';
 import Icon from 'component/common/icon';
 import DateTime from 'component/dateTime';
 import { Menu, MenuList, MenuButton, MenuPopover, MenuItems, MenuItem } from '@reach/menu-button';
+import { formatLbryUrlForWeb } from 'util/url';
+import { useHistory } from 'react-router';
 
 type Props = {};
 
 export default function Notification(props: Props) {
   const { notification, onClick } = props;
+  const notificationTarget = notification && notification.notification_parameters.device.target;
+  const notificationLink = formatLbryUrlForWeb(notificationTarget);
+  const { push } = useHistory();
   console.log('notification', notification);
 
   let icon;
@@ -21,8 +26,16 @@ export default function Notification(props: Props) {
   }
 
   const Wrapper = onClick
-    ? props => <div className="menu__link--notification">{props.children}</div>
-    : props => <MenuItem className="menu__link--notification">{props.children}</MenuItem>;
+    ? props => (
+        <a className="menu__link--notification" onClick={() => push(notificationLink)}>
+          {props.children}
+        </a>
+      )
+    : props => (
+        <MenuItem className="menu__link--notification" onSelect={() => push(notificationLink)}>
+          {props.children}
+        </MenuItem>
+      );
 
   return (
     <Wrapper>
