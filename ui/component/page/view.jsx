@@ -28,8 +28,8 @@ function Page(props: Props) {
     <Fragment>
       {!noHeader && <Header authHeader={authPage} />}
       <div className={classnames('main-wrapper__inner')}>
-        <main className={classnames(MAIN_CLASS, className, { 'main--full-width': authPage })}>{children}</main>
         {!authPage && !noSideNavigation && <SideNavigation />}
+        <main className={classnames(MAIN_CLASS, className, { 'main--full-width': authPage })}>{children}</main>
         {/* @if TARGET='app' */}
         <StatusBar />
         {/* @endif */}
