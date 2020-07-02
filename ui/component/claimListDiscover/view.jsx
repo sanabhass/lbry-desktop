@@ -328,6 +328,9 @@ function ClaimListDiscover(props: Props) {
       claimSearchResult.length % CS.PAGE_SIZE === 0);
 
   // Don't use the query from createNormalizedClaimSearchKey for the effect since that doesn't include page & release_time
+  let tmpOptions = { ...options };
+  tmpOptions.release_time = '-1';
+  const optionsStringToMarkEffect = JSON.stringify(tmpOptions);
   const optionsStringForEffect = JSON.stringify(options);
 
   const timedOutMessage = (
@@ -482,7 +485,7 @@ function ClaimListDiscover(props: Props) {
       const searchOptions = JSON.parse(optionsStringForEffect);
       doClaimSearch(searchOptions);
     }
-  }, [doClaimSearch, shouldPerformSearch, optionsStringForEffect, forceRefresh]);
+  }, [doClaimSearch, shouldPerformSearch, optionsStringToMarkEffect, forceRefresh]);
 
   const defaultHeader = repostedClaimId ? null : (
     <Fragment>
