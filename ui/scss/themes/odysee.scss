@@ -1,0 +1,121 @@
+:root {
+  --color-focus: #aae1f3;
+
+  // Button
+  --color-link-icon: var(--color-gray-4);
+  --color-link-active: var(--color-primary);
+  --color-navigation-link: var(--color-gray-5);
+  --color-header-button: #f7f7f7;
+  --color-button-border: var(--color-gray-3);
+
+  --color-primary: #f07c00;
+  --color-primary-alt: #ffe6cc;
+  --color-primary-alt-2: #ffcd99;
+
+  --color-secondary: #0087b2;
+  --color-secondary-alt: #d8f4fe;
+
+  // Button
+  --color-link: var(--color-primary);
+  --color-link-hover: #854500;
+  //   --color-link-active: #60e1ba;
+  //   --color-link-icon: #6a7580;
+  //   --color-navigation-link: #b3bcc6;
+  //   --color-button-primary-bg-hover: #ffce99;
+  //   --color-button-primary-text: var(--color-primary-alt);
+  //   --color-button-primary-hover-text: var(--color-text);
+  --color-button-primary-bg: var(--color-primary-alt);
+  --color-button-primary-text: var(--color-primary);
+  --color-button-primary-hover-text: var(--color-primary);
+
+  //   --color-button-secondary-bg: #c2f0ff;
+  //   --color-button-secondary-bg-hover: #18c6ff;
+  //   --color-button-secondary-text: #c2f0ff;
+  //   --color-button-alt-bg: #4d5660;
+  //   --color-button-alt-bg-hover: #3e464d;
+  //   --color-button-alt-text: #e2e9f0;
+  //   --color-header-button: var(--color-link-icon);
+  //   --color-button-border: var(--color-gray-5);
+
+  // Color
+  --color-background: #f9f9f9;
+  --color-background--splash: #212529;
+  --color-border: #ededed;
+  --color-background-overlay: #21252980;
+  --color-nag: #f26522;
+  --color-error: #fcafca;
+  --color-comment-menu: #e0e0e0;
+  --color-comment-menu-hovering: #6a6a6a;
+  --color-notice: #fef3ca;
+  --color-purchased: var(--color-cost);
+  --color-purchased-alt: #ffebc2;
+  --color-purchased-text: var(--color-gray-5);
+
+  // Icons
+  --color-follow-bg: #ffd4da;
+  --color-follow-icon: #e2495e;
+  --color-view-bg: var(--color-secondary-alt);
+  --color-view-icon: var(--color-secondary);
+
+  // Text
+  --color-text-selection-bg: var(--color-secondary-alt);
+  --color-text-selection: var(--color-secondary);
+  --color-text-error: var(--color-danger);
+  --color-text-empty: #999999;
+  --color-text-help: #999999;
+  --color-text-subtitle: #767676;
+  --color-text-warning: #212529;
+  --color-text-help-warning: #989b20;
+  --color-text-warning--background: var(--lbry-yellow-1);
+  --color-blockquote: var(--color-gray-3);
+  --color-blockquote-bg: var(--color-gray-1);
+
+  --color-spinner-light: #ffffff;
+  --color-spinner-dark: #212529;
+  --color-placeholder-background: #f0f0f0;
+  --color-header-background: #ffffff;
+  --color-card-background: #ffffff;
+  --color-card-background-highlighted: #f6faff;
+  --color-list-header: #fff;
+  --color-file-viewer-background: var(--color-card-background);
+  --color-tabs-background: var(--color-card-background);
+  --color-tab-divider: var(--color-primary);
+  --color-modal-background: var(--color-card-background);
+
+  // Menu
+  --color-menu-background: var(--color-header-background);
+  --color-menu-background--selected: var(--color-secondary-alt);
+  --color-menu-background--active: var(--color-secondary-alt);
+  --color-menu-icon: var(--color-navigation-link);
+  --color-menu-icon-active: var(--color-navigation-link);
+
+  // Search
+  --color-search-suggestion: #212529;
+  --color-search-suggestion-background: #cce6fb;
+
+  // Snack
+  --color-snack-bg: var(--color-primary);
+  --color-snack: var(--color-white);
+  --color-snack-bg-error: var(--color-danger);
+  --color-snack-upgrade: var(--color-tertiary);
+
+  // Editor
+  --color-editor-cursor: var(--color-text);
+  --color-editor-quote: #707070;
+  --color-editor-tag: #ea9400;
+  --color-editor-attr: #04b0f4;
+  --color-editor-string: #ff7451;
+  --color-editor-inline-code-fg: var(--color-text);
+  --color-editor-inline-code-fg-preview: #eeeeee;
+  --color-editor-inline-code-bg: rgba(157, 161, 165, 0.3);
+  --color-editor-inline-code-bg-preview: #8f9499;
+  --color-editor-selected: #add6ff;
+  --color-editor-link: var(--color-link);
+  --color-editor-url: var(--color-editor-string);
+  --color-editor-hr: var(--color-editor-tag);
+  --color-editor-hr-preview: #cccccc;
+
+  // Ads
+  --color-ads-background: #fae5ff;
+  --color-ads-link: var(--color-link);
+}
