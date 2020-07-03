@@ -26,8 +26,7 @@ const SearchOptions = (props: Props) => {
       />
       {expanded && (
         <Form className="search__options">
-          <fieldset>
-            <legend className="search__legend">{__('Search For')}</legend>
+          {/* <fieldset>
             {[
               {
                 option: SEARCH_OPTIONS.INCLUDE_FILES,
@@ -52,22 +51,22 @@ const SearchOptions = (props: Props) => {
                 onChange={() => setSearchOption(SEARCH_OPTIONS.CLAIM_TYPE, option)}
               />
             ))}
-          </fieldset>
+          </fieldset> */}
 
           <fieldset>
-            <legend className="search__legend">{__('File Types')}</legend>
+            <legend className="search__legend">{__('Type')}</legend>
             {[
               {
                 option: SEARCH_OPTIONS.MEDIA_VIDEO,
-                label: __('Videos'),
+                label: __('Video'),
               },
               {
                 option: SEARCH_OPTIONS.MEDIA_AUDIO,
-                label: __('Audio'),
+                label: __('Music'),
               },
               {
                 option: SEARCH_OPTIONS.MEDIA_IMAGE,
-                label: __('Images'),
+                label: __('Image'),
               },
               {
                 option: SEARCH_OPTIONS.MEDIA_TEXT,
@@ -75,7 +74,7 @@ const SearchOptions = (props: Props) => {
               },
               {
                 option: SEARCH_OPTIONS.MEDIA_APPLICATION,
-                label: __('Other Files'),
+                label: __('Other'),
               },
             ].map(({ option, label }) => (
               <FormField
@@ -91,7 +90,7 @@ const SearchOptions = (props: Props) => {
             ))}
           </fieldset>
 
-          <fieldset>
+          {/* <fieldset>
             <legend className="search__legend">{__('Other Options')}</legend>
             <FormField
               type="select"
@@ -106,7 +105,7 @@ const SearchOptions = (props: Props) => {
               <option value={50}>50</option>
               <option value={100}>100</option>
             </FormField>
-          </fieldset>
+          </fieldset> */}
         </Form>
       )}
     </div>

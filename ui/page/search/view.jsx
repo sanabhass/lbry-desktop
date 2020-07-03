@@ -75,7 +75,7 @@ export default function SearchPage(props: Props) {
       <section className="search">
         {urlQuery && (
           <Fragment>
-            <header className="search__header">
+            {/* <header className="search__header">
               <div className="claim-preview__actions--header">
                 <ClaimUri uri={uriFromQuery} noShortUrl />
                 <Button
@@ -91,7 +91,7 @@ export default function SearchPage(props: Props) {
               <div className="card">
                 <ClaimPreview uri={uriFromQuery} type="large" placeholder="publish" />
               </div>
-            </header>
+            </header> */}
 
             <ClaimList
               uris={uris}
