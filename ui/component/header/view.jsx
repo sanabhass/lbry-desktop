@@ -1,6 +1,6 @@
 // @flow
 import * as ICONS from 'constants/icons';
-import * as SETTINGS from 'constants/settings';
+// import * as SETTINGS from 'constants/settings';
 import * as PAGES from 'constants/pages';
 import React, { Fragment } from 'react';
 import { withRouter } from 'react-router';
@@ -51,9 +51,9 @@ const Header = (props: Props) => {
   const {
     roundedBalance,
     history,
-    setClientSetting,
-    currentTheme,
-    automaticDarkModeEnabled,
+    // setClientSetting,
+    // currentTheme,
+    // automaticDarkModeEnabled,
     hideBalance,
     email,
     authenticated,
@@ -95,17 +95,17 @@ const Header = (props: Props) => {
     },
   };
 
-  function handleThemeToggle() {
-    if (automaticDarkModeEnabled) {
-      setClientSetting(SETTINGS.AUTOMATIC_DARK_MODE_ENABLED, false);
-    }
+  //   function handleThemeToggle() {
+  //     if (automaticDarkModeEnabled) {
+  //       setClientSetting(SETTINGS.AUTOMATIC_DARK_MODE_ENABLED, false);
+  //     }
 
-    if (currentTheme === 'dark') {
-      setClientSetting(SETTINGS.THEME, 'light');
-    } else {
-      setClientSetting(SETTINGS.THEME, 'dark');
-    }
-  }
+  //     if (currentTheme === 'dark') {
+  //       setClientSetting(SETTINGS.THEME, 'light');
+  //     } else {
+  //       setClientSetting(SETTINGS.THEME, 'dark');
+  //     }
+  //   }
 
   function getWalletTitle() {
     return hideBalance || Number(roundedBalance) === 0 ? (
@@ -284,10 +284,10 @@ const Header = (props: Props) => {
                   <Icon aria-hidden icon={ICONS.HELP} />
                   {__('Help')}
                 </MenuItem>
-                <MenuItem className="menu__link" onSelect={handleThemeToggle}>
+                {/* <MenuItem className="menu__link" onSelect={handleThemeToggle}>
                   <Icon icon={currentTheme === 'light' ? ICONS.DARK : ICONS.LIGHT} />
                   {currentTheme === 'light' ? __('Dark') : __('Light')}
-                </MenuItem>
+                </MenuItem> */}
               </MenuList>
             </Menu>
             {IS_WEB && !authenticated && (
