@@ -1,10 +1,9 @@
 :root {
-  --color-focus: #d8cefd;
-  --color-primary: #301989;
-  --color-primary-alt: #ffce94;
-  --color-primary-alt-2: #ffab47;
-  --color-secondary: #301989;
-  --color-secondary-alt: #dbd4f7;
+  --color-primary: #4785d2;
+  --color-primary-alt: #ffe1bd;
+  --color-primary-alt-2: #ffb43b;
+  --color-secondary: #4785d2;
+  --color-secondary-alt: #e2ecf8;
 
   // Button
   --color-link-icon: var(--color-gray-4);
@@ -17,9 +16,11 @@
   --color-link: var(--color-primary);
   --color-button-primary-bg: var(--color-primary-alt-2);
   --color-button-primary-bg-hover: #ffe28f;
-  --color-button-primary-text: var(--color-primary);
+  --color-button-primary-text: #38567a;
   --color-button-primary-hover-text: var(--color-primary);
-  --color-button-secondary-bg-hover: #ede9fb;
+  --color-button-secondary-bg-hover: #edf2f7;
+  --color-button-toggle-text: #38567a;
+  --color-button-toggle-bg: var(--color-primary-alt);
 
   // Color
   --color-background: #f9f9f9;
