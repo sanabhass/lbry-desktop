@@ -71,6 +71,7 @@ function WalletSendTip(props: Props) {
 
   const tipAmount = useCustomTip ? customTipAmount : presetTipAmount;
   const isSupport = claimIsMine ? true : !sendAsTip;
+  const showFinalTipWarning = sendAsTip && !tipError;
 
   React.useEffect(() => {
     const regexp = RegExp(/^(\d*([.]\d{0,8})?)$/);
@@ -288,6 +289,11 @@ function WalletSendTip(props: Props) {
                     />
                   )}
                 </div>
+                {showFinalTipWarning && (
+                  <div className="help--warning">
+                    {__('%amount% LBC will be sent permanently to the creator.', { amount: tipAmount })}
+                  </div>
+                )}
               </>
             )
           }
